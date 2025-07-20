@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct BasicsView:View {
-    
     var body: some View {
-        Spacer()
+        NavigationStack {
+            ThemedScreen {
+                VStack {
+                    Spacer()
+                }
+            }.navigationTitle("Basics")
+        }
     }
-    
 }

@@ -19,17 +19,12 @@ struct MainTabView: View {
                 .tabItem {
                     Label("UIKit vs SwiftUI", systemImage: "arrow.left.arrow.right")
                 }
-
-            TestYourselfView()
-                .tabItem {
-                    Label("Test", systemImage: "checkmark.circle")
-                }
         }
         .environmentObject(progressManager)
     }
 }
 
+
 #Preview {
     MainTabView(progressManager: ProgressManager())
 }
-

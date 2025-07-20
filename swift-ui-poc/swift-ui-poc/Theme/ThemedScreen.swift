@@ -17,7 +17,7 @@ struct ThemedScreen<Content: View>: View {
 
     var body: some View {
         ZStack {
-            AppTheme.backgroundGradient.ignoresSafeArea()
+            AppTheme.backgroundGradient(randomize: true).ignoresSafeArea()
             content
                 .padding()
         }

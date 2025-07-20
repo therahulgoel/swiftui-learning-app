@@ -6,9 +6,15 @@
 //
 import SwiftUI
 
-struct UIKitVsSwiftUIView:View {
+struct UIKitVsSwiftUIView: View {
     var body: some View {
-        Text("SwiftUI way is composition, not inheritance.")
-        Spacer()
+        NavigationStack {
+            ThemedScreen{
+                VStack {
+                    Text("SwiftUI way is composition, not inheritance.")
+                    Spacer()
+                }
+            }.navigationTitle("UIKit vs SwiftUI")
+        }
     }
 }
