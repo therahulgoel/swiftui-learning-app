@@ -8,6 +8,7 @@ import SwiftUI
 
 struct UIKitVsSwiftUIView:View {
     var body: some View {
+        Text("SwiftUI way is composition, not inheritance.")
         Spacer()
     }
 }
