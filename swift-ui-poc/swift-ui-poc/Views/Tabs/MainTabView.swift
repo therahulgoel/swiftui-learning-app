@@ -5,15 +5,15 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            HomeView()
-            .tabItem {
-                Label("Home", systemImage: "house")
-            }
-
             BasicsView()
                 .tabItem {
                     Label("Basics", systemImage: "square.grid.2x2")
                 }
+            
+            StateView()
+            .tabItem {
+                Label("States", systemImage: "house")
+            }
 
             UIKitVsSwiftUIView()
                 .tabItem {
