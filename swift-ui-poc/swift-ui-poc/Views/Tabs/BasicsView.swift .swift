@@ -12,6 +12,7 @@ struct BasicsView:View {
         NavigationStack {
             ThemedScreen {
                 VStack {
+                    
                     Spacer()
                 }
             }.navigationTitle("Basics")
