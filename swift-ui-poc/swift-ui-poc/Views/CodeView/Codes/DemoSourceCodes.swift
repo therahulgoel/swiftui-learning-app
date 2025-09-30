@@ -10,7 +10,7 @@ import Foundation
 
 struct DemoSourceCodes {
     static let splash = DemoSourceLoader.loadCode(named: "SplashScreenView")
-    static let localGlobal = DemoSourceLoader.loadCode(named: "LocalGlobalSideBySideDemo")
+    static let geometry = DemoSourceLoader.loadCode(named: "GeometryReaderView")
 }
 
 struct DemoSourceLoader {

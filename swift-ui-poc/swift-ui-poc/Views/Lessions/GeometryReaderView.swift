@@ -39,11 +39,9 @@ struct GeometryReaderView: View {
 
 struct GeometryReaderViewScreen: View {
     var body: some View {
-        let code = DemoSourceLoader.loadCode(named: "LocalGlobalSideBySideDemo")
-        
         return DemoCodeView(
             title: "GeometryReader Local vs Global",
-            code: code
+            code: DemoSourceCodes.geometry
         ) {
             GeometryReaderView()
         }
