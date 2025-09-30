@@ -18,6 +18,10 @@ final class BasicsViewModel: ObservableObject {
         DemoItem( 
             title: "GeometryReader: Local vs Global",
             destination: AnyView(GeometryReaderViewScreen())
+        ),
+        DemoItem(
+            title: "Stack",
+            destination: AnyView(StackLesson())
         )
     ]
 }
