@@ -7,15 +7,22 @@
 
 import SwiftUI
 
-struct BasicsView:View {
+struct BasicsView: View {
+    @StateObject private var viewModel = BasicsViewModel()
+    
     var body: some View {
         NavigationStack {
             ThemedScreen {
-                VStack {
-                    
-                    Spacer()
+                List(viewModel.demoItems) { item in
+                    NavigationLink(item.title) {
+                        item.destination
+                    }
                 }
-            }.navigationTitle("Basics")
+                .scrollContentBackground(.hidden)
+                .background(Color.clear)
+            }
+            .navigationTitle("Basics")
         }
     }
 }
+
