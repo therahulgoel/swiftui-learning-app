@@ -15,9 +15,9 @@ struct DemoItem: Identifiable {
 
 final class BasicsViewModel: ObservableObject {
     @Published var demoItems: [DemoItem] = [
-        DemoItem(
+        DemoItem( 
             title: "GeometryReader: Local vs Global",
-            destination: AnyView(LocalGlobalSideBySideDemo())
+            destination: AnyView(GeometryReaderViewScreen())
         )
     ]
 }
