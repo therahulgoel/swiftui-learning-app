@@ -22,6 +22,8 @@ final class BasicsViewModel: ObservableObject {
         DemoItem(
             title: "Stack",
             destination: AnyView(StackLesson())
-        )
+        ),
+        DemoItem(title: "Animations",
+                 destination: AnyView(SwiftUIAnimationsDemo()))
     ]
 }

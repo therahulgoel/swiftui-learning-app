@@ -53,6 +53,7 @@
 			buildConfigurationList = 668329DD2E296C3C00DED4B9 /* Build configuration list for PBXNativeTarget "swift-ui-poc" */;
 			buildPhases = (
 				668329CB2E296C3800DED4B9 /* Sources */,
+				132ACEA22E8C0B0600EEDAE7 /* Export Swift Files to TXT */,
 				668329CC2E296C3800DED4B9 /* Frameworks */,
 				668329CD2E296C3800DED4B9 /* Resources */,
 			);
@@ -113,6 +114,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		132ACEA22E8C0B0600EEDAE7 /* Export Swift Files to TXT */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Export Swift Files to TXT";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"📂 Exporting .swift files to .txt...\"\n\n# This must point to your actual Swift code directory\nSRC_DIR=\"${SRCROOT}/swift-ui-poc\"  # <- adjust this to match your layout\nDEST_DIR=\"${TEMP_DIR}/ExportedSwiftCode\"\n\necho \"🔍 Looking for .swift files in: $SRC_DIR\"\nmkdir -p \"${DEST_DIR}\"\n\n# Restrict search to only the safe source folder\nswift_files=$(find \"$SRC_DIR\" -type f -name \"*.swift\" 2>/dev/null)\n\nif [ -z \"$swift_files\" ]; then\n    echo \"❌ No Swift files found. Check your source folder or permissions.\"\n    exit 0\nfi\n\necho \"📄 Swift files found:\"\necho \"$swift_files\"\n\nwhile IFS= read -r swift_file; do\n    filename=$(basename \"$swift_file\" .swift)\n    dest_file=\"${DEST_DIR}/${filename}.txt\"\n    \n    echo \"➡️  Copying: $swift_file -> $dest_file\"\n    cp \"$swift_file\" \"$dest_file\"\ndone <<< \"$swift_files\"\n\necho \"✅ Done exporting Swift files to:\"\necho \"   $DEST_DIR\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		668329CB2E296C3800DED4B9 /* Sources */ = {
